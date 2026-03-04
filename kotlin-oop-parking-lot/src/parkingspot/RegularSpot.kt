@@ -3,9 +3,7 @@ package parkingspot
 import vehicle.Vehicle
 import vehicle.VehicleSize
 
-class CompactSPot(
-    override val spotNumber: Int
-) : ParkingSpot {
+class RegularSpot(override val spotNumber: Int, ) : ParkingSpot{
 
     private var currentVehicle: Vehicle? = null
 
@@ -31,5 +29,5 @@ class CompactSPot(
     }
 
     override val size: VehicleSize
-        get() = VehicleSize.SMALL
+        get() = VehicleSize.MEDIUM
 }
