@@ -12,9 +12,9 @@ data class Ticket(
     val entryTime: LocalDateTime,
     val exitTime: LocalDateTime? = null,
 ) {
-    fun calculateParkingDuration(): Duration? {
+    fun calculateParkingDuration(): Long {
         return exitTime.let {
-            Duration.between(entryTime, it)
+            Duration.between(entryTime, it).toHours()
         }
     }
 }
